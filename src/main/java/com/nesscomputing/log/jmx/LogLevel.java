@@ -23,9 +23,9 @@ import org.apache.log4j.Level;
  */
 public enum LogLevel
 {
-	ALL(Level.ALL, false), TRACE(Level.TRACE, true),
-	DEBUG(Level.DEBUG, true), INFO(Level.INFO, true), WARN(Level.WARN, true), ERROR(Level.ERROR, true),
-	FATAL(Level.FATAL, false), OFF(Level.OFF, false);
+    ALL(Level.ALL, false), TRACE(Level.TRACE, true),
+    DEBUG(Level.DEBUG, true), INFO(Level.INFO, true), WARN(Level.WARN, true), ERROR(Level.ERROR, true),
+    FATAL(Level.FATAL, false), OFF(Level.OFF, false);
 
     private final Level level;
     private final boolean reasonable;
@@ -46,7 +46,7 @@ public enum LogLevel
      */
     public boolean isReasonable()
     {
-    	return reasonable;
+        return reasonable;
     }
 
     public static final LogLevel getLogLevel(final Level level)
@@ -62,7 +62,7 @@ public enum LogLevel
     public static final LogLevel getLogLevel(final String levelName)
     {
         for (LogLevel logLevel : LogLevel.values()) {
-        	// Don't do stupid things...
+            // Don't do stupid things...
             if (logLevel.name().equals(levelName)  && logLevel.isReasonable()) {
                 return logLevel;
             }

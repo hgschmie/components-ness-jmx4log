@@ -37,12 +37,12 @@ public class Log4JLevelMBean
 
     void setGeneration(final long generation)
     {
-    	this.generation = generation;
+        this.generation = generation;
     }
 
     long getGeneration()
     {
-    	return generation;
+        return generation;
     }
 
     @Managed
@@ -52,33 +52,33 @@ public class Log4JLevelMBean
     }
 
     @Managed
-	public String getEffectiveLevel()
-	{
-		final Level level = logger.getEffectiveLevel();
-		return (level != null) ? level.toString() : "<unset>";
-	}
+    public String getEffectiveLevel()
+    {
+        final Level level = logger.getEffectiveLevel();
+        return (level != null) ? level.toString() : "<unset>";
+    }
 
     @Managed
-	public String getLevel()
-	{
-		final Level level = logger.getLevel();
-		return (level != null) ? level.toString() : "<unset>";
-	}
+    public String getLevel()
+    {
+        final Level level = logger.getLevel();
+        return (level != null) ? level.toString() : "<unset>";
+    }
 
     @Managed
-	public void setLevel(final String levelString)
-	{
-    	// Allow erasing the current level using the empty string.
-    	if (levelString == null || levelString.trim().isEmpty()) {
-    		logger.setLevel(null);
-    	}
-    	else {
-    		final LogLevel level = LogLevel.getLogLevel(levelString);
-    		if (level != null) {
-    			logger.setLevel(level.getLevel());
-    		}
-    	}
-	}
+    public void setLevel(final String levelString)
+    {
+        // Allow erasing the current level using the empty string.
+        if (levelString == null || levelString.trim().isEmpty()) {
+            logger.setLevel(null);
+        }
+        else {
+            final LogLevel level = LogLevel.getLogLevel(levelString);
+            if (level != null) {
+                logger.setLevel(level.getLevel());
+            }
+        }
+    }
 
     @Managed
     public String getParentName()
