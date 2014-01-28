@@ -23,6 +23,7 @@ import com.google.inject.AbstractModule;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.google.inject.name.Names;
+
 import com.nesscomputing.lifecycle.Lifecycle;
 import com.nesscomputing.lifecycle.LifecycleStage;
 import com.nesscomputing.lifecycle.guice.AbstractLifecycleProvider;
@@ -45,7 +46,7 @@ public class JmxLoggingModule extends AbstractModule
     }
 
 
-    public final class Log4JMBeanProvider extends AbstractLifecycleProvider<Log4JMBean> implements Provider<Log4JMBean>
+    public static final class Log4JMBeanProvider extends AbstractLifecycleProvider<Log4JMBean> implements Provider<Log4JMBean>
     {
         private final String context;
 

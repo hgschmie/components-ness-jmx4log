@@ -26,13 +26,13 @@ import java.util.concurrent.atomic.AtomicLong;
 import javax.management.InstanceAlreadyExistsException;
 import javax.management.MBeanServer;
 
+import com.nesscomputing.logging.Log;
+
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Category;
 import org.apache.log4j.LogManager;
 import org.weakref.jmx.MBeanExporter;
 import org.weakref.jmx.Managed;
-
-import com.nesscomputing.logging.Log;
 
 /**
  * Control the Log4j Loggers using JMX.
